@@ -1,4 +1,4 @@
-package com.myname.mymodid;
+package com.iouter.icbattery;
 
 import cpw.mods.fml.common.event.*;
 

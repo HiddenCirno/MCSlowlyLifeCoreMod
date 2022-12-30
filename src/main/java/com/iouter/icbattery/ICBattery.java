@@ -1,13 +1,19 @@
-package com.myname.mymodid;
+package com.iouter.icbattery;
 
+import com.iouter.icbattery.common.CreativeTabICBattery;
+import com.iouter.icbattery.items.ItemBattery;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.*;
+import cpw.mods.fml.common.registry.GameRegistry;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 @Mod(modid = Tags.MODID, version = Tags.VERSION, name = Tags.MODNAME, acceptedMinecraftVersions = "[1.7.10]")
-public class MyMod {
+public class ICBattery {
+
+    public static final CreativeTabICBattery creativeTabICBattery = new CreativeTabICBattery("ICbattery");
+    public static final ItemBattery name = new ItemBattery("Name", 3, 10000000, 512, 4);
 
     private static Logger LOG = LogManager.getLogger(Tags.MODID);
 
@@ -19,12 +25,14 @@ public class MyMod {
     // etc, and register them with the GameRegistry."
     public void preInit(FMLPreInitializationEvent event) {
         proxy.preInit(event);
+        register();
     }
 
     @Mod.EventHandler
     // load "Do your mod setup. Build whatever data structures you care about. Register recipes."
     public void init(FMLInitializationEvent event) {
         proxy.init(event);
+        registerRecipe();
     }
 
     @Mod.EventHandler
@@ -74,4 +82,10 @@ public class MyMod {
     public static void error(String message) {
         LOG.error(message);
     }
+
+    private void register() {
+        GameRegistry.registerItem(name, "Name", Tags.MODID);
+    }
+
+    private void registerRecipe() {}
 }

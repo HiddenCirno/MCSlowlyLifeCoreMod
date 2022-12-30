@@ -1,4 +1,4 @@
-package com.myname.mymodid;
+package com.iouter.icbattery;
 
 import java.io.File;
 import net.minecraftforge.common.config.Configuration;
