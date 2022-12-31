@@ -21,7 +21,6 @@ public class ItemBattery extends ItemBasic implements IElectricItem {
     private final int transferLimit;
     private final int maxTextureInteger;
     private IIcon[] textures;
-    private int dura;
 
     public ItemBattery(String name, int tier, int maxCharge, int transferLimit, int maxTextureInteger) {
         super();
@@ -100,9 +99,9 @@ public class ItemBattery extends ItemBasic implements IElectricItem {
     @SideOnly(Side.CLIENT)
     @Override
     public void addInformation(ItemStack itemStack, EntityPlayer player, List list, boolean isF3) {
-        list.add(StatCollector.translateToLocalFormatted(this.getUnlocalizedName() + ".tooltip.0", tier));
+        list.add(StatCollector.translateToLocalFormatted("itemBattery.tooltip.0", tier));
         list.add((StatCollector.translateToLocalFormatted(
-                this.getUnlocalizedName() + ".tooltip.1", (int) ElectricItem.manager.getCharge(itemStack), (int)
+                "itemBattery.tooltip.1", (int) ElectricItem.manager.getCharge(itemStack), (int)
                         getMaxCharge(itemStack))));
     }
 

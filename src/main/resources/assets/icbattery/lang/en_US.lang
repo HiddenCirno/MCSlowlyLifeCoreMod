@@ -1,5 +1,6 @@
 itemGroup.ICbattery=ICbattery
 
 item.Name.name=Name
-item.Name.tooltip.0=Tier : %d
-item.Name.tooltip.1=%d / %d
+
+itemBattery.tooltip.0=Tier : %d
+itemBattery.tooltip.1=%d / %d
