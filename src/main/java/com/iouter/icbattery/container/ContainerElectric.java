@@ -1,14 +1,14 @@
 package com.iouter.icbattery.container;
 
-import com.iouter.icbattery.tileentity.TileEntityElectric;
+import com.iouter.icbattery.api.tileentity.TileEntityElectricBase;
 import ic2.core.ContainerFullInv;
 import ic2.core.slot.SlotArmor;
 import ic2.core.slot.SlotInvSlot;
 import java.util.List;
 import net.minecraft.entity.player.EntityPlayer;
 
-public class ContainerElectric extends ContainerFullInv<TileEntityElectric> {
-    public ContainerElectric(EntityPlayer player, TileEntityElectric tileentity) {
+public class ContainerElectric extends ContainerFullInv<TileEntityElectricBase> {
+    public ContainerElectric(EntityPlayer player, TileEntityElectricBase tileentity) {
         super(player, tileentity, 179, 166);
         for (int i = 0; i < 4; i++) addSlotToContainer(new SlotArmor(player.inventory, i, 152, 5 + i * 18));
 

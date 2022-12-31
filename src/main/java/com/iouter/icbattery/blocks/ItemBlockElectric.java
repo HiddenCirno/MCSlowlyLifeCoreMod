@@ -1,5 +1,6 @@
 package com.iouter.icbattery.blocks;
 
+import com.iouter.icbattery.api.blocks.BlockElectricBase;
 import com.iouter.icbattery.api.blocks.ItemBlockBasic;
 import java.util.List;
 import net.minecraft.block.Block;
@@ -14,14 +15,14 @@ public class ItemBlockElectric extends ItemBlockBasic {
     }
 
     public int getMaxOutput() {
-        if (this.field_150939_a instanceof BlockElectric) {
-            return ((BlockElectric) field_150939_a).getMaxOutput();
+        if (this.field_150939_a instanceof BlockElectricBase) {
+            return ((BlockElectricBase) field_150939_a).getMaxOutput();
         } else return 0;
     }
 
     public int getMaxStorage() {
-        if (this.field_150939_a instanceof BlockElectric) {
-            return ((BlockElectric) field_150939_a).getMaxStorage();
+        if (this.field_150939_a instanceof BlockElectricBase) {
+            return ((BlockElectricBase) field_150939_a).getMaxStorage();
         } else return 0;
     }
 

@@ -1,16 +1,18 @@
 package com.iouter.icbattery;
 
-import com.iouter.icbattery.blocks.BlockElectric;
+import com.iouter.icbattery.blocks.BlockHFSU;
 import com.iouter.icbattery.blocks.ItemBlockElectric;
 import com.iouter.icbattery.common.CreativeTabICBattery;
 import com.iouter.icbattery.gui.GuiHander;
 import com.iouter.icbattery.items.ItemBattery;
-import com.iouter.icbattery.tileentity.TileEntityElectric;
+import com.iouter.icbattery.tileentity.TileEntityHFSU;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.*;
 import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
+import net.minecraft.block.Block;
+import net.minecraft.item.Item;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -21,7 +23,8 @@ public class ICBattery {
     public static ICBattery instance;
 
     public static final CreativeTabICBattery creativeTabICBattery = new CreativeTabICBattery("ICbattery");
-    public static final ItemBattery t3crystal = new ItemBattery("T3Crystal", 3, 100000000, 8192, 5);
+    public static final Item t3crystal = new ItemBattery("T3Crystal", 3, 100000000, 8192, 5);
+    public static final Block HFSU = new BlockHFSU();
 
     private static Logger LOG = LogManager.getLogger(Tags.MODID);
 
@@ -93,8 +96,8 @@ public class ICBattery {
     }
 
     private void register() {
-        GameRegistry.registerTileEntity(TileEntityElectric.class, "ICbatteryTEStorageUnit");
-        GameRegistry.registerBlock(new BlockElectric("HFSU", 3, 8192, 400000000), ItemBlockElectric.class, "HFSU");
+        GameRegistry.registerTileEntity(TileEntityHFSU.class, "ICbatteryTEStorageUnit");
+        GameRegistry.registerBlock(HFSU, ItemBlockElectric.class, "HFSU");
         GameRegistry.registerItem(t3crystal, "T3Crystal", Tags.MODID);
     }
 

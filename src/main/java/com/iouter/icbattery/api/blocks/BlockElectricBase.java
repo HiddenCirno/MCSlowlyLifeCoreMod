@@ -1,9 +1,8 @@
-package com.iouter.icbattery.blocks;
+package com.iouter.icbattery.api.blocks;
 
 import com.iouter.icbattery.ICBattery;
 import com.iouter.icbattery.Tags;
 import com.iouter.icbattery.api.blocks.BlockBase;
-import com.iouter.icbattery.tileentity.TileEntityElectric;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import ic2.api.tile.IWrenchable;
@@ -32,21 +31,19 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.common.util.ForgeDirection;
 
-public class BlockElectric extends BlockBase {
+public abstract class BlockElectricBase extends BlockBase {
 
-    private final int tier;
     private final int maxOutput;
     private final int maxStorage;
 
     @SideOnly(Side.CLIENT)
     private IIcon top, output, input;
 
-    public BlockElectric(String name, int tier, int maxOutput, int maxStorage) {
+    public BlockElectricBase(String name, int maxOutput, int maxStorage) {
         super(Material.iron);
         this.setHardness(1.5f);
         this.setStepSound(soundTypeMetal);
         this.setBlockName(name);
-        this.tier = tier;
         this.maxOutput = maxOutput;
         this.maxStorage = maxStorage;
     }
@@ -248,9 +245,7 @@ public class BlockElectric extends BlockBase {
     }
 
     @Override
-    public TileEntity createTileEntity(World world, int metadata) {
-        return new TileEntityElectric(getUnlocalizedName().substring(5), tier, maxOutput, maxStorage);
-    }
+    public abstract TileEntity createTileEntity(World world, int metadata);
 
     public int getMaxOutput() {
         return maxOutput;
