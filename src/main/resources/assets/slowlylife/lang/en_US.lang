@@ -1,14 +1,16 @@
 itemGroup.SlowlyLife=Slowly Life
 
-item.T3Crystal.name=Hidden Crystal
+item.T3Crystal.name=§aHidden Crystal
+
+item.T3Circuit.name=§aHigh Tec Circuit
 
 item.dustEmerald.name=Emerald Dust
-item.dustEmerald.tooltip.0=Emerald Dust
-item.dustEmerald.tooltip.1=Tsud Dlareme
 
-tile.HFSU.name=HFSU
+tile.HFSU.name=§aHFSU
 tile.Name.name=Name
 tile.Name.tooltip.0=test tooltip
+
+tile.HTMachine.name=§aHigh Tec Machine Block
 
 itemBattery.tooltip.0=Tier : %d
 itemBattery.tooltip.1=%d / %d

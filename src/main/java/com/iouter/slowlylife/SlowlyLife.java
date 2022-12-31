@@ -1,9 +1,9 @@
 package com.iouter.slowlylife;
 
-import com.iouter.slowlylife.blocks.SLBlockHFSU;
 import com.iouter.slowlylife.blocks.SLBlockCommon;
-import com.iouter.slowlylife.blocks.SLItemBlockElectric;
+import com.iouter.slowlylife.blocks.SLBlockHFSU;
 import com.iouter.slowlylife.blocks.SLItemBlockCommon;
+import com.iouter.slowlylife.blocks.SLItemBlockElectric;
 import com.iouter.slowlylife.common.CreativeTabSlowlyLife;
 import com.iouter.slowlylife.gui.SLGuiHander;
 import com.iouter.slowlylife.items.SLItemBattery;
@@ -12,11 +12,19 @@ import com.iouter.slowlylife.tileentity.SLTileEntityHFSU;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.*;
+import ic2.api.item.IC2Items;
+import ic2.api.recipe.ICraftingRecipeManager;
+import ic2.api.recipe.IRecipeInput;
+import ic2.api.recipe.RecipeInputItemStack;
+import ic2.api.recipe.Recipes;
 import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
+import ic2.core.Ic2Items;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
+import net.minecraft.init.Items;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -34,10 +42,13 @@ public class SlowlyLife {
     public static final CreativeTabSlowlyLife creativeTabSlowlyLife = new CreativeTabSlowlyLife("Slowlylife");
     public static final Item t3crystal = new SLItemBattery("T3Crystal", 3, 100000000, 8192, 5);
     public static final Block HFSU = new SLBlockHFSU();
-    public static final Block Name = new SLBlockCommon("Name", Material.rock).setHardness(0.0F).setLightLevel(1.0F);
+    // public static final Block Name = new SLBlockCommon("Name", Material.rock).setHardness(0.0F).setLightLevel(1.0F);
+    public static final Block HTMachine = new SLBlockCommon("HTMachine", Material.rock).setHardness(0.0f).setLightLevel(1.0f);
     public static final Item dustEmerald = new SLItemCommon("dustEmerald");
-
+    public static final Item T3Circuit = new SLItemCommon("T3Circuit");
+    //Recipes.advRecipes.addRecipe();
     private static Logger LOG = LogManager.getLogger(Tags.MODID);
+
 
     @SidedProxy(clientSide = Tags.GROUPNAME + ".ClientProxy", serverSide = Tags.GROUPNAME + ".CommonProxy")
     public static CommonProxy proxy;
@@ -110,9 +121,25 @@ public class SlowlyLife {
         GameRegistry.registerTileEntity(SLTileEntityHFSU.class, "HFSU");
         GameRegistry.registerBlock(HFSU, SLItemBlockElectric.class, "HFSU");
         GameRegistry.registerItem(dustEmerald, "dustEmerald");
-        GameRegistry.registerBlock(Name, SLItemBlockCommon.class, "Name");
+        // GameRegistry.registerBlock(Name, SLItemBlockCommon.class, "Name");
+        // HTMachine
+        GameRegistry.registerBlock(HTMachine, SLItemBlockCommon.class, "HTMachine");
         GameRegistry.registerItem(t3crystal, "T3Crystal");
+        GameRegistry.registerItem(T3Circuit, "T3Circuit");
     }
 
-    private void registerRecipe() {}
+    private void registerRecipe() {
+        Recipes.advRecipes.addRecipe(
+            new ItemStack(T3Circuit),
+            "aba",
+            "cdc",
+            "aba",
+            'a', Items.glowstone_dust,
+            'b', Ic2Items.diamondDust,
+            'c', dustEmerald,
+            'd', Ic2Items.advancedCircuit
+            );
+
+        //Recipes.macerator.addRecipe(  );
+    }
 }
