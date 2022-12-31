@@ -21,7 +21,6 @@ public class ICBattery {
     public static ICBattery instance;
 
     public static final CreativeTabICBattery creativeTabICBattery = new CreativeTabICBattery("ICbattery");
-    //public static final ItemBattery name = new ItemBattery("Name", 3, 10000000, 512, 4);
     public static final ItemBattery t3crystal = new ItemBattery("T3Crystal", 3, 100000000, 8192, 5);
 
     private static Logger LOG = LogManager.getLogger(Tags.MODID);
@@ -95,7 +94,7 @@ public class ICBattery {
 
     private void register() {
         GameRegistry.registerTileEntity(TileEntityElectric.class, "ICbatteryTEStorageUnit");
-        GameRegistry.registerBlock(new BlockElectric("GGSU", 3, 8192, 400000000), ItemBlockElectric.class, "GGSU");
+        GameRegistry.registerBlock(new BlockElectric("HFSU", 3, 8192, 400000000), ItemBlockElectric.class, "HFSU");
         GameRegistry.registerItem(t3crystal, "T3Crystal", Tags.MODID);
     }
 

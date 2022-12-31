@@ -6,7 +6,6 @@ import com.iouter.icbattery.api.blocks.BlockBase;
 import com.iouter.icbattery.tileentity.TileEntityElectric;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
-import ic2.api.item.IC2Items;
 import ic2.api.tile.IWrenchable;
 import ic2.core.Ic2Items;
 import ic2.core.block.TileEntityBlock;
@@ -264,8 +263,9 @@ public class BlockElectric extends BlockBase {
     @Override
     public boolean onBlockActivated(
             World world, int x, int y, int z, EntityPlayer player, int var6, float var7, float var8, float var9) {
-        if (player.getCurrentEquippedItem().getItem() == Ic2Items.wrench.getItem()
-                || player.getCurrentEquippedItem().getItem() == Ic2Items.electricWrench.getItem()) {
+        if (player.getCurrentEquippedItem() != null
+                && (player.getCurrentEquippedItem().getItem() == Ic2Items.wrench.getItem()
+                        || player.getCurrentEquippedItem().getItem() == Ic2Items.electricWrench.getItem())) {
             return true;
         }
 

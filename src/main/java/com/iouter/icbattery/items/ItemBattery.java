@@ -30,7 +30,7 @@ public class ItemBattery extends ItemBase implements IElectricItem {
         this.maxCharge = maxCharge;
         this.transferLimit = transferLimit;
         this.maxTextureInteger = maxTextureInteger;
-        this.setMaxDamage(100);
+        this.setMaxDamage(27);
         this.setMaxStackSize(1);
         this.setNoRepair();
     }
