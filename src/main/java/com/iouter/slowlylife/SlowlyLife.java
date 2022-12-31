@@ -16,7 +16,12 @@ import net.minecraft.item.Item;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-@Mod(modid = Tags.MODID, version = Tags.VERSION, name = Tags.MODNAME, acceptedMinecraftVersions = "[1.7.10]", dependencies = "required-after:IC2")
+@Mod(
+        modid = Tags.MODID,
+        version = Tags.VERSION,
+        name = Tags.MODNAME,
+        acceptedMinecraftVersions = "[1.7.10]",
+        dependencies = "required-after:IC2")
 public class SlowlyLife {
 
     @Mod.Instance(Tags.MODID)
@@ -101,7 +106,5 @@ public class SlowlyLife {
         GameRegistry.registerItem(t3crystal, "T3Crystal", Tags.MODID);
     }
 
-    private void registerRecipe() {
-
-    }
+    private void registerRecipe() {}
 }
