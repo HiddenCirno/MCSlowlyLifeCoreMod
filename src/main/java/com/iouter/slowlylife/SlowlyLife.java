@@ -5,6 +5,7 @@ import com.iouter.slowlylife.blocks.ItemBlockElectric;
 import com.iouter.slowlylife.common.CreativeTabSlowlyLife;
 import com.iouter.slowlylife.gui.GuiHander;
 import com.iouter.slowlylife.items.ItemBattery;
+import com.iouter.slowlylife.items.ItemCommon;
 import com.iouter.slowlylife.tileentity.TileEntityHFSU;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.SidedProxy;
@@ -30,6 +31,7 @@ public class SlowlyLife {
     public static final CreativeTabSlowlyLife creativeTabSlowlyLife = new CreativeTabSlowlyLife("Slowlylife");
     public static final Item t3crystal = new ItemBattery("T3Crystal", 3, 100000000, 8192, 5);
     public static final Block HFSU = new BlockHFSU();
+    public static final ItemCommon dustEmerald = new ItemCommon("dustEmerald");
 
     private static Logger LOG = LogManager.getLogger(Tags.MODID);
 
@@ -101,9 +103,10 @@ public class SlowlyLife {
     }
 
     private void register() {
-        GameRegistry.registerTileEntity(TileEntityHFSU.class, "ICbatteryTEStorageUnit");
+        GameRegistry.registerTileEntity(TileEntityHFSU.class, "HFSU");
         GameRegistry.registerBlock(HFSU, ItemBlockElectric.class, "HFSU");
-        GameRegistry.registerItem(t3crystal, "T3Crystal", Tags.MODID);
+        GameRegistry.registerItem(dustEmerald, "dustEmerald");
+        GameRegistry.registerItem(t3crystal, "T3Crystal");
     }
 
     private void registerRecipe() {}
