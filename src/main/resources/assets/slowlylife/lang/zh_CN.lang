@@ -1,0 +1,11 @@
+itemGroup.SlowlyLife=Slowly Life
+
+item.T3Crystal.name=§a海德恩水晶
+
+itemBattery.tooltip.0=Tier : %d
+itemBattery.tooltip.1=%d / %d
+
+tile.GGSU.name=§aHFSU
+
+itemBlockElectric.tooltip.0=Output: %d EU/t
+itemBlockElectric.tooltip.1=%d/%d EU
