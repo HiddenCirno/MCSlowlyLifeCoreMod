@@ -13,6 +13,6 @@ public class CreativeTabICBattery extends CreativeTabs {
 
     @Override
     public Item getTabIconItem() {
-        return ICBattery.name;
+        return ICBattery.t3crystal;
     }
 }
