@@ -1,16 +1,24 @@
 package com.iouter.icbattery;
 
+import com.iouter.icbattery.blocks.BlockElectric;
+import com.iouter.icbattery.blocks.ItemBlockElectric;
 import com.iouter.icbattery.common.CreativeTabICBattery;
+import com.iouter.icbattery.gui.GuiHander;
 import com.iouter.icbattery.items.ItemBattery;
+import com.iouter.icbattery.tileentity.TileEntityElectric;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.*;
+import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 @Mod(modid = Tags.MODID, version = Tags.VERSION, name = Tags.MODNAME, acceptedMinecraftVersions = "[1.7.10]")
 public class ICBattery {
+
+    @Mod.Instance(Tags.MODID)
+    public static ICBattery instance;
 
     public static final CreativeTabICBattery creativeTabICBattery = new CreativeTabICBattery("ICbattery");
     public static final ItemBattery name = new ItemBattery("Name", 3, 10000000, 512, 4);
@@ -32,6 +40,7 @@ public class ICBattery {
     // load "Do your mod setup. Build whatever data structures you care about. Register recipes."
     public void init(FMLInitializationEvent event) {
         proxy.init(event);
+        NetworkRegistry.INSTANCE.registerGuiHandler(ICBattery.instance, new GuiHander());
         registerRecipe();
     }
 
@@ -84,6 +93,8 @@ public class ICBattery {
     }
 
     private void register() {
+        GameRegistry.registerTileEntity(TileEntityElectric.class, "GGSU");
+        GameRegistry.registerBlock(new BlockElectric("GGSU", 3, 512, 1000000000), ItemBlockElectric.class,"GGSU");
         GameRegistry.registerItem(name, "Name", Tags.MODID);
     }
 

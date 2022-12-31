@@ -2,5 +2,10 @@ itemGroup.ICbattery=ICbattery
 
 item.Name.name=Name
 
+tile.GGSU.name=GGSU
+
 itemBattery.tooltip.0=Tier : %d
 itemBattery.tooltip.1=%d / %d
+
+itemBlockElectric.tooltip.0=Output: %d EU/t
+itemBlockElectric.tooltip.1=%d/%d EU

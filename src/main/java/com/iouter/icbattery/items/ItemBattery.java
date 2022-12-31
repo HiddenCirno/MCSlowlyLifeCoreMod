@@ -1,6 +1,7 @@
 package com.iouter.icbattery.items;
 
 import com.iouter.icbattery.Tags;
+import com.iouter.icbattery.api.items.ItemBase;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import ic2.api.item.ElectricItem;
@@ -14,7 +15,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.IIcon;
 import net.minecraft.util.StatCollector;
 
-public class ItemBattery extends ItemBasic implements IElectricItem {
+public class ItemBattery extends ItemBase implements IElectricItem {
 
     private final int tier;
     private final int maxCharge;
@@ -96,7 +97,6 @@ public class ItemBattery extends ItemBasic implements IElectricItem {
         return transferLimit;
     }
 
-    @SideOnly(Side.CLIENT)
     @Override
     public void addInformation(ItemStack itemStack, EntityPlayer player, List list, boolean isF3) {
         list.add(StatCollector.translateToLocalFormatted("itemBattery.tooltip.0", tier));
