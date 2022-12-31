@@ -1,9 +1,9 @@
 itemGroup.ICbattery=ICbattery
 
 item.Name.name=Name
-item.T3Crystal.name=Hidden Crystal
+item.T3Crystal.name=§aHidden Crystal
 
-tile.GGSU.name=HFSU
+tile.GGSU.name=§aHFSU
 
 itemBattery.tooltip.0=Tier : %d
 itemBattery.tooltip.1=%d / %d
