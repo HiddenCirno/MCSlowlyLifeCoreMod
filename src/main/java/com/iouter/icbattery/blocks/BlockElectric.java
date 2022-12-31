@@ -139,12 +139,16 @@ public class BlockElectric extends BlockBase {
      */
     @Override
     @SideOnly(Side.CLIENT)
-    public IIcon getIcon(int side, int metadata){
-        switch(side){
-            case 0: return this.top;
-            case 1: return this.top;
-            case 3: return this.output;
-            default: return this.input;
+    public IIcon getIcon(int side, int metadata) {
+        switch (side) {
+            case 0:
+                return this.top;
+            case 1:
+                return this.top;
+            case 3:
+                return this.output;
+            default:
+                return this.input;
         }
     }
 

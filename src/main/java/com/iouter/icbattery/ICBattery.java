@@ -94,7 +94,7 @@ public class ICBattery {
 
     private void register() {
         GameRegistry.registerTileEntity(TileEntityElectric.class, "GGSU");
-        GameRegistry.registerBlock(new BlockElectric("GGSU", 3, 512, 1000000000), ItemBlockElectric.class,"GGSU");
+        GameRegistry.registerBlock(new BlockElectric("GGSU", 3, 512, 1000000000), ItemBlockElectric.class, "GGSU");
         GameRegistry.registerItem(name, "Name", Tags.MODID);
     }
 

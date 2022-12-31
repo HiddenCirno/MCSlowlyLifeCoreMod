@@ -1,16 +1,10 @@
 package com.iouter.icbattery.blocks;
 
 import com.iouter.icbattery.api.blocks.ItemBlockBasic;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
-import ic2.core.util.StackUtil;
 import java.util.List;
 import net.minecraft.block.Block;
-import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.StatCollector;
 
 public class ItemBlockElectric extends ItemBlockBasic {
