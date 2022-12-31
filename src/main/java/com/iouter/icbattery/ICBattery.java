@@ -11,12 +11,13 @@ import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.*;
 import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
+import ic2.api.recipe.Recipes;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-@Mod(modid = Tags.MODID, version = Tags.VERSION, name = Tags.MODNAME, acceptedMinecraftVersions = "[1.7.10]")
+@Mod(modid = Tags.MODID, version = Tags.VERSION, name = Tags.MODNAME, acceptedMinecraftVersions = "[1.7.10]", dependencies = "required-after:IC2")
 public class ICBattery {
 
     @Mod.Instance(Tags.MODID)
@@ -101,5 +102,7 @@ public class ICBattery {
         GameRegistry.registerItem(t3crystal, "T3Crystal", Tags.MODID);
     }
 
-    private void registerRecipe() {}
+    private void registerRecipe() {
+
+    }
 }
