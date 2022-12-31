@@ -2,9 +2,13 @@ itemGroup.SlowlyLife=Slowly Life
 
 item.T3Crystal.name=Hidden Crystal
 
-item.dustEmerald.name = Emerald Dust
+item.dustEmerald.name=Emerald Dust
+item.dustEmerald.tooltip.0=Emerald Dust
+item.dustEmerald.tooltip.1=Tsud Dlareme
 
 tile.HFSU.name=HFSU
+tile.Name.name=Name
+tile.Name.tooltip.0=test tooltip
 
 itemBattery.tooltip.0=Tier : %d
 itemBattery.tooltip.1=%d / %d

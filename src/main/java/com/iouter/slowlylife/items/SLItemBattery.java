@@ -1,7 +1,7 @@
 package com.iouter.slowlylife.items;
 
 import com.iouter.slowlylife.Tags;
-import com.iouter.slowlylife.api.items.ItemBase;
+import com.iouter.slowlylife.api.items.SLItemBase;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import ic2.api.item.ElectricItem;
@@ -15,7 +15,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.IIcon;
 import net.minecraft.util.StatCollector;
 
-public class ItemBattery extends ItemBase implements IElectricItem {
+public class SLItemBattery extends SLItemBase implements IElectricItem {
 
     private final int tier;
     private final int maxCharge;
@@ -23,9 +23,8 @@ public class ItemBattery extends ItemBase implements IElectricItem {
     private final int maxTextureInteger;
     private IIcon[] textures;
 
-    public ItemBattery(String name, int tier, int maxCharge, int transferLimit, int maxTextureInteger) {
-        super();
-        setUnlocalizedName(name);
+    public SLItemBattery(String name, int tier, int maxCharge, int transferLimit, int maxTextureInteger) {
+        super(name);
         this.tier = tier;
         this.maxCharge = maxCharge;
         this.transferLimit = transferLimit;

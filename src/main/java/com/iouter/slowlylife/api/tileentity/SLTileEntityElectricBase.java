@@ -2,10 +2,10 @@ package com.iouter.slowlylife.api.tileentity;
 
 import ic2.core.block.wiring.TileEntityElectricBlock;
 
-public abstract class TileEntityElectricBase extends TileEntityElectricBlock {
+public abstract class SLTileEntityElectricBase extends TileEntityElectricBlock {
     private final String name;
 
-    public TileEntityElectricBase(String name, int tier, int maxOutput, int maxStorage) {
+    public SLTileEntityElectricBase(String name, int tier, int maxOutput, int maxStorage) {
         super(tier, maxOutput, maxStorage);
         this.name = name;
     }

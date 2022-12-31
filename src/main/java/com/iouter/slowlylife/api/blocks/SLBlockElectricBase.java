@@ -30,7 +30,7 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.common.util.ForgeDirection;
 
-public abstract class BlockElectricBase extends BlockBase {
+public abstract class SLBlockElectricBase extends SLBlockBase {
 
     private final int maxOutput;
     private final int maxStorage;
@@ -38,11 +38,10 @@ public abstract class BlockElectricBase extends BlockBase {
     @SideOnly(Side.CLIENT)
     private IIcon top, output, input;
 
-    public BlockElectricBase(String name, int maxOutput, int maxStorage) {
-        super(Material.iron);
+    public SLBlockElectricBase(String name, int maxOutput, int maxStorage) {
+        super(Material.iron, name);
         this.setHardness(1.5f);
         this.setStepSound(soundTypeMetal);
-        this.setBlockName(name);
         this.maxOutput = maxOutput;
         this.maxStorage = maxStorage;
     }

@@ -1,18 +1,21 @@
 package com.iouter.slowlylife;
 
-import com.iouter.slowlylife.blocks.BlockHFSU;
-import com.iouter.slowlylife.blocks.ItemBlockElectric;
+import com.iouter.slowlylife.blocks.SLBlockHFSU;
+import com.iouter.slowlylife.blocks.SLBlockCommon;
+import com.iouter.slowlylife.blocks.SLItemBlockElectric;
+import com.iouter.slowlylife.blocks.SLItemBlockCommon;
 import com.iouter.slowlylife.common.CreativeTabSlowlyLife;
-import com.iouter.slowlylife.gui.GuiHander;
-import com.iouter.slowlylife.items.ItemBattery;
-import com.iouter.slowlylife.items.ItemCommon;
-import com.iouter.slowlylife.tileentity.TileEntityHFSU;
+import com.iouter.slowlylife.gui.SLGuiHander;
+import com.iouter.slowlylife.items.SLItemBattery;
+import com.iouter.slowlylife.items.SLItemCommon;
+import com.iouter.slowlylife.tileentity.SLTileEntityHFSU;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.*;
 import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.block.Block;
+import net.minecraft.block.material.Material;
 import net.minecraft.item.Item;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -29,9 +32,10 @@ public class SlowlyLife {
     public static SlowlyLife instance;
 
     public static final CreativeTabSlowlyLife creativeTabSlowlyLife = new CreativeTabSlowlyLife("Slowlylife");
-    public static final Item t3crystal = new ItemBattery("T3Crystal", 3, 100000000, 8192, 5);
-    public static final Block HFSU = new BlockHFSU();
-    public static final ItemCommon dustEmerald = new ItemCommon("dustEmerald");
+    public static final Item t3crystal = new SLItemBattery("T3Crystal", 3, 100000000, 8192, 5);
+    public static final Block HFSU = new SLBlockHFSU();
+    public static final Block Name = new SLBlockCommon("Name", Material.rock).setHardness(0.0F).setLightLevel(1.0F);
+    public static final Item dustEmerald = new SLItemCommon("dustEmerald");
 
     private static Logger LOG = LogManager.getLogger(Tags.MODID);
 
@@ -50,7 +54,7 @@ public class SlowlyLife {
     // load "Do your mod setup. Build whatever data structures you care about. Register recipes."
     public void init(FMLInitializationEvent event) {
         proxy.init(event);
-        NetworkRegistry.INSTANCE.registerGuiHandler(SlowlyLife.instance, new GuiHander());
+        NetworkRegistry.INSTANCE.registerGuiHandler(SlowlyLife.instance, new SLGuiHander());
         registerRecipe();
     }
 
@@ -103,9 +107,10 @@ public class SlowlyLife {
     }
 
     private void register() {
-        GameRegistry.registerTileEntity(TileEntityHFSU.class, "HFSU");
-        GameRegistry.registerBlock(HFSU, ItemBlockElectric.class, "HFSU");
+        GameRegistry.registerTileEntity(SLTileEntityHFSU.class, "HFSU");
+        GameRegistry.registerBlock(HFSU, SLItemBlockElectric.class, "HFSU");
         GameRegistry.registerItem(dustEmerald, "dustEmerald");
+        GameRegistry.registerBlock(Name, SLItemBlockCommon.class, "Name");
         GameRegistry.registerItem(t3crystal, "T3Crystal");
     }
 

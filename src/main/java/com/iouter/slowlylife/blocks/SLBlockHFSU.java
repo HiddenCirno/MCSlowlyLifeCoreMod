@@ -1,18 +1,18 @@
 package com.iouter.slowlylife.blocks;
 
-import com.iouter.slowlylife.api.blocks.BlockElectricBase;
-import com.iouter.slowlylife.tileentity.TileEntityHFSU;
+import com.iouter.slowlylife.api.blocks.SLBlockElectricBase;
+import com.iouter.slowlylife.tileentity.SLTileEntityHFSU;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
 
-public class BlockHFSU extends BlockElectricBase {
+public class SLBlockHFSU extends SLBlockElectricBase {
 
-    public BlockHFSU() {
+    public SLBlockHFSU() {
         super("HFSU", 8192, 400000000);
     }
 
     @Override
     public TileEntity createTileEntity(World world, int metadata) {
-        return new TileEntityHFSU();
+        return new SLTileEntityHFSU();
     }
 }

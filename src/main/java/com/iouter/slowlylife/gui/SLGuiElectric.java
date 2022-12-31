@@ -1,7 +1,7 @@
 package com.iouter.slowlylife.gui;
 
 import com.iouter.slowlylife.Tags;
-import com.iouter.slowlylife.container.ContainerElectric;
+import com.iouter.slowlylife.container.SLContainerElectric;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import ic2.core.GuiIconButton;
@@ -16,15 +16,15 @@ import net.minecraft.util.StatCollector;
 import org.lwjgl.opengl.GL11;
 
 @SideOnly(Side.CLIENT)
-public class GuiElectric extends GuiContainer {
-    private final ContainerElectric container;
+public class SLGuiElectric extends GuiContainer {
+    private final SLContainerElectric container;
     private final String armorInv;
     private final String level;
     private final String name;
     private static final ResourceLocation BACKGROUND =
             new ResourceLocation(Tags.MODID + ":textures/gui/gui_storageunit.png");
 
-    public GuiElectric(ContainerElectric container, String name) {
+    public SLGuiElectric(SLContainerElectric container, String name) {
         super(container);
 
         this.xSize = 176;

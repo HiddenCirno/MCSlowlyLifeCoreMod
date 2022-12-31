@@ -2,11 +2,12 @@ package com.iouter.slowlylife.api.blocks;
 
 import com.iouter.slowlylife.SlowlyLife;
 import net.minecraft.block.Block;
-import net.minecraft.block.material.Material;
+import net.minecraft.item.ItemBlock;
 
-public class BlockBase extends Block {
-    protected BlockBase(Material material) {
-        super(material);
+public class SLItemBlockBase extends ItemBlock {
+
+    public SLItemBlockBase(Block block) {
+        super(block);
         this.setCreativeTab(SlowlyLife.creativeTabSlowlyLife);
     }
 }
