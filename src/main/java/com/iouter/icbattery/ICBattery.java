@@ -94,7 +94,7 @@ public class ICBattery {
     }
 
     private void register() {
-        GameRegistry.registerTileEntity(TileEntityElectric.class, "GGSU");
+        GameRegistry.registerTileEntity(TileEntityElectric.class, "ICbatteryTEStorageUnit");
         GameRegistry.registerBlock(new BlockElectric("GGSU", 3, 8192, 400000000), ItemBlockElectric.class, "GGSU");
         GameRegistry.registerItem(t3crystal, "T3Crystal", Tags.MODID);
     }
