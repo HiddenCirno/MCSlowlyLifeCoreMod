@@ -8,6 +8,7 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import ic2.api.item.IC2Items;
 import ic2.api.tile.IWrenchable;
+import ic2.core.Ic2Items;
 import ic2.core.block.TileEntityBlock;
 import ic2.core.block.wiring.TileEntityElectricBlock;
 import ic2.core.util.StackUtil;
@@ -263,8 +264,10 @@ public class BlockElectric extends BlockBase {
     @Override
     public boolean onBlockActivated(
             World world, int x, int y, int z, EntityPlayer player, int var6, float var7, float var8, float var9) {
-        if (player.getCurrentEquippedItem() == IC2Items.getItem("wrench")
-                || player.getCurrentEquippedItem() == IC2Items.getItem("electricWrench")) return true;
+        if (player.getCurrentEquippedItem().getItem() == Ic2Items.wrench.getItem()
+                || player.getCurrentEquippedItem().getItem() == Ic2Items.electricWrench.getItem()) {
+            return true;
+        }
 
         if (!player.isSneaking()) {
             player.openGui(ICBattery.instance, 0, world, x, y, z);
