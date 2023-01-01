@@ -9,8 +9,7 @@ public class CommonProxy {
     public void preInit(FMLPreInitializationEvent event) {
         Config.syncronizeConfiguration(event.getSuggestedConfigurationFile());
 
-        SlowlyLife.info(Config.greeting);
-        SlowlyLife.info("I am " + Tags.MODNAME + " at version " + Tags.VERSION + " and group name " + Tags.GROUPNAME);
+        SlowlyLife.info("Time to" + Tags.MODNAME);
     }
 
     // load "Do your mod setup. Build whatever data structures you care about. Register recipes."

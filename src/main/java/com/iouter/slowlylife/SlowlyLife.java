@@ -44,7 +44,6 @@ public class SlowlyLife {
     public static final Item T3Circuit = new SLItemCommon("T3Circuit");
     public static final Item HTAlloy = new SLItemCommon("HTAlloy");
     public static final Item PlateHTAlloy = new SLItemCommon("PlateHTAlloy");
-    // Recipes.advRecipes.addRecipe();
     private static Logger LOG = LogManager.getLogger(Tags.MODID);
 
     @SidedProxy(clientSide = Tags.GROUPNAME + ".ClientProxy", serverSide = Tags.GROUPNAME + ".CommonProxy")
