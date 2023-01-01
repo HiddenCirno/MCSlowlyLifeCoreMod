@@ -5,6 +5,7 @@ import com.iouter.slowlylife.blocks.SLBlockHFSU;
 import com.iouter.slowlylife.blocks.SLItemBlockCommon;
 import com.iouter.slowlylife.blocks.SLItemBlockElectric;
 import com.iouter.slowlylife.common.CreativeTabSlowlyLife;
+import com.iouter.slowlylife.common.Util;
 import com.iouter.slowlylife.gui.SLGuiHander;
 import com.iouter.slowlylife.items.SLItemBattery;
 import com.iouter.slowlylife.items.SLItemCommon;
@@ -43,9 +44,11 @@ public class SlowlyLife {
     public static final Item t3crystal = new SLItemBattery("T3Crystal", 3, 100000000, 8192, 5);
     public static final Block HFSU = new SLBlockHFSU();
     // public static final Block Name = new SLBlockCommon("Name", Material.rock).setHardness(0.0F).setLightLevel(1.0F);
-    public static final Block HTMachine = new SLBlockCommon("HTMachine", Material.rock).setHardness(0.0f).setLightLevel(1.0f);
+    public static final Block HTMachine = new SLBlockCommon("HTMachine", Material.rock).setHardness(10.0f).setLightLevel(0.0f);
     public static final Item dustEmerald = new SLItemCommon("dustEmerald");
     public static final Item T3Circuit = new SLItemCommon("T3Circuit");
+    public static final Item HTAlloy = new SLItemCommon("HTAlloy");
+    public static final Item PlateHTAlloy = new SLItemCommon("PlateHTAlloy");
     //Recipes.advRecipes.addRecipe();
     private static Logger LOG = LogManager.getLogger(Tags.MODID);
 
@@ -126,6 +129,8 @@ public class SlowlyLife {
         GameRegistry.registerBlock(HTMachine, SLItemBlockCommon.class, "HTMachine");
         GameRegistry.registerItem(t3crystal, "T3Crystal");
         GameRegistry.registerItem(T3Circuit, "T3Circuit");
+        GameRegistry.registerItem(HTAlloy, "HTAlloy");
+        GameRegistry.registerItem(PlateHTAlloy, "PlateHTAlloy");
     }
 
     private void registerRecipe() {
@@ -139,7 +144,29 @@ public class SlowlyLife {
             'c', dustEmerald,
             'd', Ic2Items.advancedCircuit
             );
-
-        //Recipes.macerator.addRecipe(  );
+        Recipes.macerator.addRecipe(
+            Util.getIRecipeInput(false, 1, new ItemStack[]{new ItemStack(Items.emerald)}),
+            null, new ItemStack(dustEmerald));
+        Recipes.compressor.addRecipe(
+            Util.getIRecipeInput(false, 1, new ItemStack[]{new ItemStack(HTAlloy)}),
+            null, new ItemStack(PlateHTAlloy));
+        Recipes.advRecipes.addRecipe(
+            new ItemStack(t3crystal),
+            "aba",
+            "aca",
+            "aba",
+            'a', dustEmerald,
+            'b', T3Circuit,
+            'c', Ic2Items.lapotronCrystal
+        );
+        Recipes.advRecipes.addRecipe(
+            new ItemStack(HTAlloy),
+            "aaa",
+            "bbb",
+            "ccc",
+            'a', Ic2Items.platelead,
+            'b', Ic2Items.plateadviron,
+            'c', Ic2Items.iridiumPlate
+        );
     }
 }
