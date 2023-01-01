@@ -1,19 +1,17 @@
 itemGroup.SlowlyLife=Slowly Life
 
 item.T3Crystal.name=§aHidden Crystal
-
 item.T3Circuit.name=§aHigh Tec Circuit
-
 item.dustEmerald.name=Emerald Dust
+item.HTAlloy.name=High Tec Alloy Ingot
+item.PlateHTAlloy.name=High Tec Alloy Plate
 
 tile.HFSU.name=§aHFSU
 tile.Name.name=Name
 tile.Name.tooltip.0=test tooltip
-
 tile.HTMachine.name=§aHigh Tec Machine Block
 
 itemBattery.tooltip.0=Tier : %d
 itemBattery.tooltip.1=%d / %d
-
 itemBlockElectric.tooltip.0=Output: %d EU/t
 itemBlockElectric.tooltip.1=%d/%d EU

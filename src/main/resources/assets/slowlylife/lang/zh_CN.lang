@@ -1,16 +1,14 @@
 itemGroup.SlowlyLife=Slowly Life
 
 item.T3Crystal.name=§a海德恩水晶
-
 item.T3Circuit.name=§a先进电路板
-
 item.dustEmerald.name=绿宝石粉
+item.HTAlloy.name=泰铂合金锭
+item.PlateHTAlloy.name=泰铂合金板
 
 itemBattery.tooltip.0=Tier : %d
 itemBattery.tooltip.1=%d / %d
-
 tile.GGSU.name=§aHFSU
-
 tile.HTMachine.name=§a先进机器外壳
 
 itemBlockElectric.tooltip.0=Output: %d EU/t
