@@ -38,7 +38,8 @@ public class SlowlyLife {
     public static final Item t3crystal = new SLItemBattery("T3Crystal", 3, 100000000, 8192, 5);
     public static final Block HFSU = new SLBlockHFSU();
     public static final Block ChargepadHFSU = new SLBlockChargepadHFSU();
-    public static final Block HTMachine = new SLBlockCommon("HTMachine", Material.rock).setHardness(0.0f).setLightLevel(1.0f);
+    public static final Block HTMachine =
+            new SLBlockCommon("HTMachine", Material.rock).setHardness(0.0f).setLightLevel(1.0f);
     public static final Item dustEmerald = new SLItemCommon("dustEmerald");
     public static final Item T3Circuit = new SLItemCommon("T3Circuit");
     public static final Item HTAlloy = new SLItemCommon("HTAlloy");

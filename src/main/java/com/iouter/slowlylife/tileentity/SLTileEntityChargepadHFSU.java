@@ -1,8 +1,6 @@
 package com.iouter.slowlylife.tileentity;
 
 import com.iouter.slowlylife.api.tileentity.SLTileEntityChargepadBase;
-import com.iouter.slowlylife.blocks.SLBlockChargepadHFSU;
-import net.minecraft.block.Block;
 
 public class SLTileEntityChargepadHFSU extends SLTileEntityChargepadBase {
     public SLTileEntityChargepadHFSU() {

@@ -4,11 +4,10 @@ import com.iouter.slowlylife.Tags;
 import com.iouter.slowlylife.api.tileentity.SLTileEntityChargepadBase;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
-import ic2.core.IC2;
 import ic2.core.block.TileEntityBlock;
 import ic2.core.block.wiring.TileEntityChargepadBlock;
 import ic2.core.util.StackUtil;
-import net.minecraft.block.Block;
+import java.util.Random;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
@@ -20,8 +19,6 @@ import net.minecraft.util.IIcon;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
-
-import java.util.Random;
 
 public abstract class SLBlockChargepadBase extends SLBlockElectricBase {
     @SideOnly(Side.CLIENT)
@@ -174,12 +171,12 @@ public abstract class SLBlockChargepadBase extends SLBlockElectricBase {
 
     @Override
     public void randomDisplayTick(World world, int x, int y, int z, Random random) {
-            TileEntity tile = world.getTileEntity(x, y, z);
-            if (tile instanceof SLTileEntityChargepadBase) {
-                SLTileEntityChargepadBase te = (SLTileEntityChargepadBase) tile;
-                te.spawnParticles(world, x, y, z, random);
-            }
+        TileEntity tile = world.getTileEntity(x, y, z);
+        if (tile instanceof SLTileEntityChargepadBase) {
+            SLTileEntityChargepadBase te = (SLTileEntityChargepadBase) tile;
+            te.spawnParticles(world, x, y, z, random);
         }
+    }
 
     @Override
     public void onEntityCollidedWithBlock(World world, int x, int y, int z, Entity entity) {
@@ -193,8 +190,7 @@ public abstract class SLBlockChargepadBase extends SLBlockElectricBase {
     }
 
     public IIcon getChargepad(boolean isActive) {
-        if (isActive)
-            return recharge;
+        if (isActive) return recharge;
         else return notcharge;
     }
 

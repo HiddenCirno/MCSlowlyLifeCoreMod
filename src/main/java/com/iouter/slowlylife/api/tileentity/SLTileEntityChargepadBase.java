@@ -1,9 +1,6 @@
 package com.iouter.slowlylife.api.tileentity;
 
-import com.iouter.slowlylife.api.blocks.SLBlockChargepadBase;
-import ic2.core.block.wiring.BlockChargepad;
 import ic2.core.block.wiring.TileEntityChargepadBlock;
-import net.minecraft.block.Block;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 
