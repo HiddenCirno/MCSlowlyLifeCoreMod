@@ -4,6 +4,7 @@ import com.iouter.slowlylife.Tags;
 import com.iouter.slowlylife.api.tileentity.SLTileEntityChargepadBase;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
+import ic2.core.IC2;
 import ic2.core.block.TileEntityBlock;
 import ic2.core.block.wiring.TileEntityChargepadBlock;
 import ic2.core.util.StackUtil;
@@ -22,7 +23,7 @@ import net.minecraft.world.World;
 
 public abstract class SLBlockChargepadBase extends SLBlockElectricBase {
     @SideOnly(Side.CLIENT)
-    private IIcon top, back, output, input, recharge, notcharge, chargepad;
+    private IIcon top, back, output, input, recharge, notcharge;
 
     public SLBlockChargepadBase(String name, int maxOutput, int maxStorage) {
         super(name, maxOutput, maxStorage);
@@ -133,31 +134,33 @@ public abstract class SLBlockChargepadBase extends SLBlockElectricBase {
 
     @Override
     public void onBlockPlacedBy(World world, int x, int y, int z, EntityLivingBase entityliving, ItemStack itemStack) {
-        TileEntity te = world.getTileEntity(x, y, z);
-        if (te instanceof TileEntityChargepadBlock) {
-            TileEntityChargepadBlock tile = (TileEntityChargepadBlock) te;
-            NBTTagCompound nbt = StackUtil.getOrCreateNbtData(itemStack);
-            tile.energy = nbt.getDouble("energy");
-            if (entityliving == null) {
-                ((TileEntityChargepadBlock) te).setFacing((short) 0);
-            } else {
-                int yaw = MathHelper.floor_double((double) (entityliving.rotationYaw * 4.0F / 360.0F) + 0.5D) & 3;
-                int pitch = Math.round(entityliving.rotationPitch);
-                if (pitch <= -65) {
-                    tile.setFacing((short) 0);
+        if (IC2.platform.isSimulating()) {
+            TileEntity te = world.getTileEntity(x, y, z);
+            if (te instanceof TileEntityChargepadBlock) {
+                TileEntityChargepadBlock tile = (TileEntityChargepadBlock) te;
+                NBTTagCompound nbt = StackUtil.getOrCreateNbtData(itemStack);
+                tile.energy = nbt.getDouble("energy");
+                if (entityliving == null) {
+                    ((TileEntityChargepadBlock) te).setFacing((short) 0);
                 } else {
-                    switch (yaw) {
-                        case 0:
-                            tile.setFacing((short) 2);
-                            break;
-                        case 1:
-                            tile.setFacing((short) 5);
-                            break;
-                        case 2:
-                            tile.setFacing((short) 3);
-                            break;
-                        case 3:
-                            tile.setFacing((short) 4);
+                    int yaw = MathHelper.floor_double((double) (entityliving.rotationYaw * 4.0F / 360.0F) + 0.5D) & 3;
+                    int pitch = Math.round(entityliving.rotationPitch);
+                    if (pitch <= -65) {
+                        tile.setFacing((short) 0);
+                    } else {
+                        switch (yaw) {
+                            case 0:
+                                tile.setFacing((short) 2);
+                                break;
+                            case 1:
+                                tile.setFacing((short) 5);
+                                break;
+                            case 2:
+                                tile.setFacing((short) 3);
+                                break;
+                            case 3:
+                                tile.setFacing((short) 4);
+                        }
                     }
                 }
             }

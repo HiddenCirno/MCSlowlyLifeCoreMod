@@ -111,7 +111,7 @@ public class SLItemBattery extends SLItemBase implements IElectricItem {
         ItemStack charged;
         if (this.getChargedItem(itemStack) == this) {
             charged = new ItemStack(this, 1);
-            ElectricItem.manager.charge(charged, 1.0D / 0.0, 2147483647, true, false);
+            ElectricItem.manager.charge(charged, 2147483647, 2147483647, true, false);
             itemList.add(charged);
         }
 

@@ -5,6 +5,7 @@ import com.iouter.slowlylife.Tags;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import ic2.api.tile.IWrenchable;
+import ic2.core.IC2;
 import ic2.core.Ic2Items;
 import ic2.core.block.TileEntityBlock;
 import ic2.core.block.wiring.TileEntityElectricBlock;
@@ -189,15 +190,17 @@ public abstract class SLBlockElectricBase extends SLBlockBase {
 
     @Override
     public void onBlockPlacedBy(World world, int x, int y, int z, EntityLivingBase entityliving, ItemStack itemStack) {
-        TileEntity tile = world.getTileEntity(x, y, z);
-        if (tile instanceof TileEntityElectricBlock) {
-            TileEntityElectricBlock electricBlock = (TileEntityElectricBlock) tile;
-            NBTTagCompound nbt = StackUtil.getOrCreateNbtData(itemStack);
-            electricBlock.energy = nbt.getDouble("energy");
-            if (entityliving == null) electricBlock.setFacing(convertIntegerToShort(1));
-            else
-                electricBlock.setFacing(
-                        convertIntegerToShort(BlockPistonBase.determineOrientation(world, x, y, z, entityliving)));
+        if (IC2.platform.isSimulating()) {
+            TileEntity tile = world.getTileEntity(x, y, z);
+            if (tile instanceof TileEntityElectricBlock) {
+                TileEntityElectricBlock electricBlock = (TileEntityElectricBlock) tile;
+                NBTTagCompound nbt = StackUtil.getOrCreateNbtData(itemStack);
+                electricBlock.energy = nbt.getDouble("energy");
+                if (entityliving == null) electricBlock.setFacing(convertIntegerToShort(1));
+                else
+                    electricBlock.setFacing(
+                            convertIntegerToShort(BlockPistonBase.determineOrientation(world, x, y, z, entityliving)));
+            }
         }
     }
 

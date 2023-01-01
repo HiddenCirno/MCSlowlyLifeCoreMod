@@ -18,7 +18,6 @@ import org.lwjgl.opengl.GL11;
 @SideOnly(Side.CLIENT)
 public class SLGuiElectric extends GuiContainer {
     private final SLContainerElectric container;
-    private final String armorInv;
     private final String level;
     private final String name;
     private static final ResourceLocation BACKGROUND =
@@ -30,7 +29,6 @@ public class SLGuiElectric extends GuiContainer {
         this.xSize = 176;
         this.ySize = 166;
         this.container = container;
-        this.armorInv = StatCollector.translateToLocal("ic2.EUStorage.gui.info.armor");
         this.level = StatCollector.translateToLocal("ic2.EUStorage.gui.info.level");
         this.name = StatCollector.translateToLocal(name);
     }

@@ -34,7 +34,7 @@ public class SlowlyLife {
     @Mod.Instance(Tags.MODID)
     public static SlowlyLife instance;
 
-    public static final CreativeTabSlowlyLife creativeTabSlowlyLife = new CreativeTabSlowlyLife("Slowlylife");
+    public static final CreativeTabSlowlyLife creativeTabSlowlyLife = new CreativeTabSlowlyLife();
     public static final Item t3crystal = new SLItemBattery("T3Crystal", 3, 100000000, 8192, 5);
     public static final Block HFSU = new SLBlockHFSU();
     public static final Block ChargepadHFSU = new SLBlockChargepadHFSU();
@@ -44,7 +44,7 @@ public class SlowlyLife {
     public static final Item T3Circuit = new SLItemCommon("T3Circuit");
     public static final Item HTAlloy = new SLItemCommon("HTAlloy");
     public static final Item PlateHTAlloy = new SLItemCommon("PlateHTAlloy");
-    private static Logger LOG = LogManager.getLogger(Tags.MODID);
+    private static final Logger LOG = LogManager.getLogger(Tags.MODID);
 
     @SidedProxy(clientSide = Tags.GROUPNAME + ".ClientProxy", serverSide = Tags.GROUPNAME + ".CommonProxy")
     public static CommonProxy proxy;

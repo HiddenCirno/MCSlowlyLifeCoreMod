@@ -7,7 +7,7 @@ import net.minecraft.item.Item;
 
 public class CreativeTabSlowlyLife extends CreativeTabs {
 
-    public CreativeTabSlowlyLife(String lable) {
+    public CreativeTabSlowlyLife() {
         super(Tags.MODNAME);
     }
 
