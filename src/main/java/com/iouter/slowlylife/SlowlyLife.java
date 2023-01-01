@@ -13,13 +13,9 @@ import com.iouter.slowlylife.tileentity.SLTileEntityHFSU;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.*;
-import ic2.api.item.IC2Items;
-import ic2.api.recipe.ICraftingRecipeManager;
-import ic2.api.recipe.IRecipeInput;
-import ic2.api.recipe.RecipeInputItemStack;
-import ic2.api.recipe.Recipes;
 import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
+import ic2.api.recipe.Recipes;
 import ic2.core.Ic2Items;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -44,14 +40,14 @@ public class SlowlyLife {
     public static final Item t3crystal = new SLItemBattery("T3Crystal", 3, 100000000, 8192, 5);
     public static final Block HFSU = new SLBlockHFSU();
     // public static final Block Name = new SLBlockCommon("Name", Material.rock).setHardness(0.0F).setLightLevel(1.0F);
-    public static final Block HTMachine = new SLBlockCommon("HTMachine", Material.rock).setHardness(10.0f).setLightLevel(0.0f);
+    public static final Block HTMachine =
+            new SLBlockCommon("HTMachine", Material.rock).setHardness(10.0f).setLightLevel(0.0f);
     public static final Item dustEmerald = new SLItemCommon("dustEmerald");
     public static final Item T3Circuit = new SLItemCommon("T3Circuit");
     public static final Item HTAlloy = new SLItemCommon("HTAlloy");
     public static final Item PlateHTAlloy = new SLItemCommon("PlateHTAlloy");
-    //Recipes.advRecipes.addRecipe();
+    // Recipes.advRecipes.addRecipe();
     private static Logger LOG = LogManager.getLogger(Tags.MODID);
-
 
     @SidedProxy(clientSide = Tags.GROUPNAME + ".ClientProxy", serverSide = Tags.GROUPNAME + ".CommonProxy")
     public static CommonProxy proxy;
@@ -135,38 +131,75 @@ public class SlowlyLife {
 
     private void registerRecipe() {
         Recipes.advRecipes.addRecipe(
-            new ItemStack(T3Circuit),
-            "aba",
-            "cdc",
-            "aba",
-            'a', Items.glowstone_dust,
-            'b', Ic2Items.diamondDust,
-            'c', dustEmerald,
-            'd', Ic2Items.advancedCircuit
-            );
+                new ItemStack(T3Circuit),
+                "aba",
+                "cdc",
+                "aba",
+                'a',
+                Items.glowstone_dust,
+                'b',
+                Ic2Items.diamondDust,
+                'c',
+                dustEmerald,
+                'd',
+                Ic2Items.advancedCircuit);
         Recipes.macerator.addRecipe(
-            Util.getIRecipeInput(false, 1, new ItemStack[]{new ItemStack(Items.emerald)}),
-            null, new ItemStack(dustEmerald));
+                Util.getIRecipeInput(false, 1, new ItemStack[] {new ItemStack(Items.emerald)}),
+                null,
+                new ItemStack(dustEmerald));
         Recipes.compressor.addRecipe(
-            Util.getIRecipeInput(false, 1, new ItemStack[]{new ItemStack(HTAlloy)}),
-            null, new ItemStack(PlateHTAlloy));
+                Util.getIRecipeInput(false, 1, new ItemStack[] {new ItemStack(HTAlloy)}),
+                null,
+                new ItemStack(PlateHTAlloy));
         Recipes.advRecipes.addRecipe(
-            new ItemStack(t3crystal),
-            "aba",
-            "aca",
-            "aba",
-            'a', dustEmerald,
-            'b', T3Circuit,
-            'c', Ic2Items.lapotronCrystal
-        );
+                new ItemStack(t3crystal),
+                "aba",
+                "aca",
+                "aba",
+                'a',
+                dustEmerald,
+                'b',
+                T3Circuit,
+                'c',
+                Ic2Items.lapotronCrystal);
         Recipes.advRecipes.addRecipe(
-            new ItemStack(HTAlloy),
-            "aaa",
-            "bbb",
-            "ccc",
-            'a', Ic2Items.platelead,
-            'b', Ic2Items.plateadviron,
-            'c', Ic2Items.iridiumPlate
-        );
+                new ItemStack(HTAlloy),
+                "aaa",
+                "bbb",
+                "ccc",
+                'a',
+                Ic2Items.platelead,
+                'b',
+                Ic2Items.plateadviron,
+                'c',
+                Ic2Items.iridiumPlate);
+        Recipes.advRecipes.addRecipe(
+                new ItemStack(HTMachine),
+                "aca",
+                "bdb",
+                "aca",
+                'a',
+                PlateHTAlloy,
+                'b',
+                Ic2Items.plateobsidian,
+                'c',
+                Ic2Items.platelapi,
+                'd',
+                Ic2Items.advancedMachine);
+        Recipes.advRecipes.addRecipe(
+                new ItemStack(HFSU),
+                "aca",
+                "bdb",
+                "aea",
+                'a',
+                t3crystal,
+                'b',
+                Ic2Items.evTransformer,
+                'c',
+                T3Circuit,
+                'd',
+                Ic2Items.ChargepadmfsUnit,
+                'e',
+                HTMachine);
     }
 }
