@@ -36,7 +36,7 @@ public abstract class SLBlockElectricBase extends SLBlockBase {
     private final int maxStorage;
 
     @SideOnly(Side.CLIENT)
-    private IIcon top, output, input;
+    private IIcon top, back, output, input;
 
     public SLBlockElectricBase(String name, int maxOutput, int maxStorage) {
         super(Material.iron, name);
@@ -57,8 +57,9 @@ public abstract class SLBlockElectricBase extends SLBlockBase {
             switch (new Short(((TileEntityBlock) tile).getFacing()).intValue()) {
                 case 0: // Up
                     switch (side) {
+                        case 1:
+                            return this.back;
                         case 2:
-                            return this.top;
                         case 3:
                             return this.top;
                         case 0:
@@ -68,8 +69,9 @@ public abstract class SLBlockElectricBase extends SLBlockBase {
                     }
                 case 1: // Down
                     switch (side) {
+                        case 0:
+                            return this.back;
                         case 2:
-                            return this.top;
                         case 3:
                             return this.top;
                         case 1:
@@ -79,8 +81,9 @@ public abstract class SLBlockElectricBase extends SLBlockBase {
                     }
                 case 2: // South
                     switch (side) {
+                        case 3:
+                            return this.back;
                         case 0:
-                            return this.top;
                         case 1:
                             return this.top;
                         case 2:
@@ -90,8 +93,9 @@ public abstract class SLBlockElectricBase extends SLBlockBase {
                     }
                 case 3: // North
                     switch (side) {
+                        case 2:
+                            return this.back;
                         case 0:
-                            return this.top;
                         case 1:
                             return this.top;
                         case 3:
@@ -101,8 +105,9 @@ public abstract class SLBlockElectricBase extends SLBlockBase {
                     }
                 case 4: // East
                     switch (side) {
+                        case 5:
+                            return this.back;
                         case 0:
-                            return this.top;
                         case 1:
                             return this.top;
                         case 4:
@@ -112,8 +117,9 @@ public abstract class SLBlockElectricBase extends SLBlockBase {
                     }
                 case 5: // West
                     switch (side) {
+                        case 4:
+                            return this.back;
                         case 0:
-                            return this.top;
                         case 1:
                             return this.top;
                         case 5:
@@ -136,8 +142,9 @@ public abstract class SLBlockElectricBase extends SLBlockBase {
     @SideOnly(Side.CLIENT)
     public IIcon getIcon(int side, int metadata) {
         switch (side) {
+            case 2:
+                return this.back;
             case 0:
-                return this.top;
             case 1:
                 return this.top;
             case 3:
@@ -151,6 +158,7 @@ public abstract class SLBlockElectricBase extends SLBlockBase {
     @SideOnly(Side.CLIENT)
     public void registerBlockIcons(IIconRegister register) {
         this.top = register.registerIcon(Tags.MODID + ":" + this.getUnlocalizedName() + ".top");
+        this.back = register.registerIcon(Tags.MODID + ":" + this.getUnlocalizedName() + ".back");
         this.output = register.registerIcon(Tags.MODID + ":" + this.getUnlocalizedName() + ".output");
         this.input = register.registerIcon(Tags.MODID + ":" + this.getUnlocalizedName() + ".input");
     }

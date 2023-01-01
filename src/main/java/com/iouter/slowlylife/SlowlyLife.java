@@ -1,13 +1,11 @@
 package com.iouter.slowlylife;
 
-import com.iouter.slowlylife.blocks.SLBlockCommon;
-import com.iouter.slowlylife.blocks.SLBlockHFSU;
-import com.iouter.slowlylife.blocks.SLItemBlockCommon;
-import com.iouter.slowlylife.blocks.SLItemBlockElectric;
+import com.iouter.slowlylife.blocks.*;
 import com.iouter.slowlylife.common.CreativeTabSlowlyLife;
 import com.iouter.slowlylife.gui.SLGuiHander;
 import com.iouter.slowlylife.items.SLItemBattery;
 import com.iouter.slowlylife.items.SLItemCommon;
+import com.iouter.slowlylife.tileentity.SLTileEntityChargepadHFSU;
 import com.iouter.slowlylife.tileentity.SLTileEntityHFSU;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.SidedProxy;
@@ -42,7 +40,7 @@ public class SlowlyLife {
     public static final CreativeTabSlowlyLife creativeTabSlowlyLife = new CreativeTabSlowlyLife("Slowlylife");
     public static final Item t3crystal = new SLItemBattery("T3Crystal", 3, 100000000, 8192, 5);
     public static final Block HFSU = new SLBlockHFSU();
-    // public static final Block Name = new SLBlockCommon("Name", Material.rock).setHardness(0.0F).setLightLevel(1.0F);
+    public static final Block ChargepadHFSU = new SLBlockChargepadHFSU();
     public static final Block HTMachine = new SLBlockCommon("HTMachine", Material.rock).setHardness(0.0f).setLightLevel(1.0f);
     public static final Item dustEmerald = new SLItemCommon("dustEmerald");
     public static final Item T3Circuit = new SLItemCommon("T3Circuit");
@@ -119,10 +117,10 @@ public class SlowlyLife {
 
     private void register() {
         GameRegistry.registerTileEntity(SLTileEntityHFSU.class, "HFSU");
+        GameRegistry.registerTileEntity(SLTileEntityChargepadHFSU.class, "ChargepadHFSU");
         GameRegistry.registerBlock(HFSU, SLItemBlockElectric.class, "HFSU");
         GameRegistry.registerItem(dustEmerald, "dustEmerald");
-        // GameRegistry.registerBlock(Name, SLItemBlockCommon.class, "Name");
-        // HTMachine
+        GameRegistry.registerBlock(ChargepadHFSU, SLItemBlockElectric.class, "ChargepadHFSU");
         GameRegistry.registerBlock(HTMachine, SLItemBlockCommon.class, "HTMachine");
         GameRegistry.registerItem(t3crystal, "T3Crystal");
         GameRegistry.registerItem(T3Circuit, "T3Circuit");
