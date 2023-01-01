@@ -198,7 +198,7 @@ public class SlowlyLife {
                 'c',
                 T3Circuit,
                 'd',
-                Ic2Items.ChargepadmfsUnit,
+                Ic2Items.mfsUnit,
                 'e',
                 HTMachine);
     }
