@@ -17,6 +17,7 @@ import ic2.api.recipe.Recipes;
 import ic2.core.Ic2Items;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
+import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -198,5 +199,18 @@ public class SlowlyLife {
                 Ic2Items.mfsUnit,
                 'e',
                 HTMachine);
+        Recipes.advRecipes.addRecipe(
+                new ItemStack(ChargepadHFSU),
+                "aca",
+                "bdb",
+                "   ",
+                'a',
+                Ic2Items.advancedCircuit,
+                'b',
+                Ic2Items.carbonPlate,
+                'c',
+                Blocks.light_weighted_pressure_plate,
+                'd',
+                HFSU);
     }
 }

@@ -10,6 +10,7 @@ tile.HFSU.name=§aHFSU
 tile.Name.name=Name
 tile.Name.tooltip.0=test tooltip
 tile.HTMachine.name=§aHigh Tec Machine Block
+tile.ChargepadHFSU.name= HFSU Charge Pad
 
 itemBattery.tooltip.0=Tier : %d
 itemBattery.tooltip.1=%d / %d

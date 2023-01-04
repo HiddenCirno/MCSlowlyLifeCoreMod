@@ -10,6 +10,7 @@ itemBattery.tooltip.0=Tier : %d
 itemBattery.tooltip.1=%d / %d
 tile.GGSU.name=§aHFSU
 tile.HTMachine.name=§a先进机器外壳
+tile.ChargepadHFSU.name= HFSU充电座
 
 itemBlockElectric.tooltip.0=Output: %d EU/t
 itemBlockElectric.tooltip.1=%d/%d EU
