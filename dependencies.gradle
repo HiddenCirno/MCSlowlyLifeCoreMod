@@ -2,4 +2,5 @@
 
 dependencies {
     compile("net.industrial-craft:industrialcraft-2:2.2.828-experimental:dev")
+    api('com.github.GTNewHorizons:Applied-Energistics-2-Unofficial:rv3-beta-228-GTNH:dev')
 }

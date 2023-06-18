@@ -7,6 +7,7 @@ import com.iouter.slowlylife.gui.SLGuiHander;
 import com.iouter.slowlylife.items.SLItemBattery;
 import com.iouter.slowlylife.items.SLItemCommon;
 import com.iouter.slowlylife.tileentity.SLTileEntityChargepadHFSU;
+import com.iouter.slowlylife.tileentity.SLTileEntityCraftingStorage;
 import com.iouter.slowlylife.tileentity.SLTileEntityHFSU;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.SidedProxy;
@@ -29,7 +30,7 @@ import org.apache.logging.log4j.Logger;
         version = Tags.VERSION,
         name = Tags.MODNAME,
         acceptedMinecraftVersions = "[1.7.10]",
-        dependencies = "required-after:IC2")
+        dependencies = "required-after:IC2;required-after:appliedenergistics2")
 public class SlowlyLife {
 
     @Mod.Instance(Tags.MODID)
@@ -46,6 +47,10 @@ public class SlowlyLife {
     public static final Item HTAlloy = new SLItemCommon("HTAlloy");
     public static final Item PlateHTAlloy = new SLItemCommon("PlateHTAlloy");
     private static final Logger LOG = LogManager.getLogger(Tags.MODID);
+
+    public static final Block BCS65536k = new SLBlockCraftingStorage();
+
+
 
     @SidedProxy(clientSide = Tags.GROUPNAME + ".ClientProxy", serverSide = Tags.GROUPNAME + ".CommonProxy")
     public static CommonProxy proxy;
@@ -117,6 +122,7 @@ public class SlowlyLife {
     private void register() {
         GameRegistry.registerTileEntity(SLTileEntityHFSU.class, "HFSU");
         GameRegistry.registerTileEntity(SLTileEntityChargepadHFSU.class, "ChargepadHFSU");
+        GameRegistry.registerTileEntity(SLTileEntityCraftingStorage.class, "BCS65536k");
         GameRegistry.registerBlock(HFSU, SLItemBlockElectric.class, "HFSU");
         GameRegistry.registerItem(dustEmerald, "dustEmerald");
         GameRegistry.registerBlock(ChargepadHFSU, SLItemBlockElectric.class, "ChargepadHFSU");
@@ -125,6 +131,8 @@ public class SlowlyLife {
         GameRegistry.registerItem(T3Circuit, "T3Circuit");
         GameRegistry.registerItem(HTAlloy, "HTAlloy");
         GameRegistry.registerItem(PlateHTAlloy, "PlateHTAlloy");
+        GameRegistry.registerBlock(BCS65536k, "CraftingStorage65536k");
+
     }
 
     private void registerRecipe() {
