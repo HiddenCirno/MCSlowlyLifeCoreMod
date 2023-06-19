@@ -1,6 +1,6 @@
 package com.iouter.slowlylife.items;
 
-import com.iouter.slowlylife.SlowlyLife;
+import com.iouter.slowlylife.common.Resiger;
 import com.iouter.slowlylife.Tags;
 import java.util.List;
 import net.minecraft.entity.player.EntityPlayer;
@@ -10,7 +10,7 @@ import net.minecraft.util.StatCollector;
 public class SLItemFood extends net.minecraft.item.ItemFood {
     public SLItemFood(String name, int p_i45339_1_, float p_i45339_2_, boolean p_i45339_3_) {
         super(p_i45339_1_, p_i45339_2_, p_i45339_3_);
-        this.setCreativeTab(SlowlyLife.creativeTabSlowlyLife);
+        this.setCreativeTab(Resiger.creativeTabSlowlyLife);
         this.setUnlocalizedName(name);
         this.setTextureName(Tags.MODID + ":" + getUnlocalizedName());
     }

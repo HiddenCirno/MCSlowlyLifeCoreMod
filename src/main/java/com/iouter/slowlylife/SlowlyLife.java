@@ -1,27 +1,12 @@
 package com.iouter.slowlylife;
 
-import com.iouter.slowlylife.blocks.*;
-import com.iouter.slowlylife.common.CreativeTabSlowlyLife;
-import com.iouter.slowlylife.common.Util;
+import com.iouter.slowlylife.common.Resiger;
+import com.iouter.slowlylife.common.ResigerRecipe;
 import com.iouter.slowlylife.gui.SLGuiHander;
-import com.iouter.slowlylife.items.SLItemBattery;
-import com.iouter.slowlylife.items.SLItemCommon;
-import com.iouter.slowlylife.tileentity.SLTileEntityChargepadHFSU;
-import com.iouter.slowlylife.tileentity.SLTileEntityCraftingStorage;
-import com.iouter.slowlylife.tileentity.SLTileEntityHFSU;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.*;
 import cpw.mods.fml.common.network.NetworkRegistry;
-import cpw.mods.fml.common.registry.GameRegistry;
-import ic2.api.recipe.Recipes;
-import ic2.core.Ic2Items;
-import net.minecraft.block.Block;
-import net.minecraft.block.material.Material;
-import net.minecraft.init.Blocks;
-import net.minecraft.init.Items;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -32,25 +17,10 @@ import org.apache.logging.log4j.Logger;
         acceptedMinecraftVersions = "[1.7.10]",
         dependencies = "required-after:IC2;required-after:appliedenergistics2")
 public class SlowlyLife {
-
     @Mod.Instance(Tags.MODID)
     public static SlowlyLife instance;
 
-    public static final CreativeTabSlowlyLife creativeTabSlowlyLife = new CreativeTabSlowlyLife();
-    public static final Item t3crystal = new SLItemBattery("T3Crystal", 3, 100000000, 8192, 5);
-    public static final Block HFSU = new SLBlockHFSU();
-    public static final Block ChargepadHFSU = new SLBlockChargepadHFSU();
-    public static final Block HTMachine =
-            new SLBlockCommon("HTMachine", Material.rock).setHardness(0.0f).setLightLevel(1.0f);
-    public static final Item dustEmerald = new SLItemCommon("dustEmerald");
-    public static final Item T3Circuit = new SLItemCommon("T3Circuit");
-    public static final Item HTAlloy = new SLItemCommon("HTAlloy");
-    public static final Item PlateHTAlloy = new SLItemCommon("PlateHTAlloy");
     private static final Logger LOG = LogManager.getLogger(Tags.MODID);
-
-    public static final Block BCS65536k = new SLBlockCraftingStorage();
-
-
 
     @SidedProxy(clientSide = Tags.GROUPNAME + ".ClientProxy", serverSide = Tags.GROUPNAME + ".CommonProxy")
     public static CommonProxy proxy;
@@ -60,15 +30,12 @@ public class SlowlyLife {
     // etc, and register them with the GameRegistry."
     public void preInit(FMLPreInitializationEvent event) {
         proxy.preInit(event);
-        register();
     }
 
     @Mod.EventHandler
     // load "Do your mod setup. Build whatever data structures you care about. Register recipes."
     public void init(FMLInitializationEvent event) {
         proxy.init(event);
-        NetworkRegistry.INSTANCE.registerGuiHandler(SlowlyLife.instance, new SLGuiHander());
-        registerRecipe();
     }
 
     @Mod.EventHandler
@@ -117,108 +84,5 @@ public class SlowlyLife {
 
     public static void error(String message) {
         LOG.error(message);
-    }
-
-    private void register() {
-        GameRegistry.registerTileEntity(SLTileEntityHFSU.class, "HFSU");
-        GameRegistry.registerTileEntity(SLTileEntityChargepadHFSU.class, "ChargepadHFSU");
-        GameRegistry.registerTileEntity(SLTileEntityCraftingStorage.class, "BCS65536k");
-        GameRegistry.registerBlock(HFSU, SLItemBlockElectric.class, "HFSU");
-        GameRegistry.registerItem(dustEmerald, "dustEmerald");
-        GameRegistry.registerBlock(ChargepadHFSU, SLItemBlockElectric.class, "ChargepadHFSU");
-        GameRegistry.registerBlock(HTMachine, SLItemBlockCommon.class, "HTMachine");
-        GameRegistry.registerItem(t3crystal, "T3Crystal");
-        GameRegistry.registerItem(T3Circuit, "T3Circuit");
-        GameRegistry.registerItem(HTAlloy, "HTAlloy");
-        GameRegistry.registerItem(PlateHTAlloy, "PlateHTAlloy");
-        GameRegistry.registerBlock(BCS65536k, "CraftingStorage65536k");
-
-    }
-
-    private void registerRecipe() {
-        Recipes.advRecipes.addRecipe(
-                new ItemStack(T3Circuit),
-                "aba",
-                "cdc",
-                "aba",
-                'a',
-                Items.glowstone_dust,
-                'b',
-                Ic2Items.diamondDust,
-                'c',
-                dustEmerald,
-                'd',
-                Ic2Items.advancedCircuit);
-        Recipes.macerator.addRecipe(
-                Util.getIRecipeInput(false, 1, new ItemStack[] {new ItemStack(Items.emerald)}),
-                null,
-                new ItemStack(dustEmerald));
-        Recipes.compressor.addRecipe(
-                Util.getIRecipeInput(false, 1, new ItemStack[] {new ItemStack(HTAlloy)}),
-                null,
-                new ItemStack(PlateHTAlloy));
-        Recipes.advRecipes.addRecipe(
-                new ItemStack(t3crystal),
-                "aba",
-                "aca",
-                "aba",
-                'a',
-                dustEmerald,
-                'b',
-                T3Circuit,
-                'c',
-                Ic2Items.lapotronCrystal);
-        Recipes.advRecipes.addRecipe(
-                new ItemStack(HTAlloy),
-                "aaa",
-                "bbb",
-                "ccc",
-                'a',
-                Ic2Items.platelead,
-                'b',
-                Ic2Items.plateadviron,
-                'c',
-                Ic2Items.iridiumPlate);
-        Recipes.advRecipes.addRecipe(
-                new ItemStack(HTMachine),
-                "aca",
-                "bdb",
-                "aca",
-                'a',
-                PlateHTAlloy,
-                'b',
-                Ic2Items.plateobsidian,
-                'c',
-                Ic2Items.platelapi,
-                'd',
-                Ic2Items.advancedMachine);
-        Recipes.advRecipes.addRecipe(
-                new ItemStack(HFSU),
-                "aca",
-                "bdb",
-                "aea",
-                'a',
-                t3crystal,
-                'b',
-                Ic2Items.evTransformer,
-                'c',
-                T3Circuit,
-                'd',
-                Ic2Items.mfsUnit,
-                'e',
-                HTMachine);
-        Recipes.advRecipes.addRecipe(
-                new ItemStack(ChargepadHFSU),
-                "aca",
-                "bdb",
-                "   ",
-                'a',
-                Ic2Items.advancedCircuit,
-                'b',
-                Ic2Items.carbonPlate,
-                'c',
-                Blocks.light_weighted_pressure_plate,
-                'd',
-                HFSU);
     }
 }

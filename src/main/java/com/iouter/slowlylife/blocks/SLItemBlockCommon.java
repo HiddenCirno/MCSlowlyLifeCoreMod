@@ -1,6 +1,6 @@
 package com.iouter.slowlylife.blocks;
 
-import com.iouter.slowlylife.SlowlyLife;
+import com.iouter.slowlylife.common.Resiger;
 import com.iouter.slowlylife.api.blocks.SLItemBlockBase;
 import java.util.List;
 import net.minecraft.block.Block;
@@ -11,7 +11,7 @@ import net.minecraft.util.StatCollector;
 public class SLItemBlockCommon extends SLItemBlockBase {
     public SLItemBlockCommon(Block block) {
         super(block);
-        this.setCreativeTab(SlowlyLife.creativeTabSlowlyLife);
+        this.setCreativeTab(Resiger.creativeTabSlowlyLife);
     }
 
     @Override

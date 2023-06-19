@@ -38,6 +38,7 @@ public class SLItemBattery extends SLItemBase implements IElectricItem {
         return index < maxTextureInteger ? this.getUnlocalizedName() + "." + index : null;
     }
 
+
     public String getTextureFolder() {
         return "batteries";
     }

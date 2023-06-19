@@ -1,6 +1,10 @@
 package com.iouter.slowlylife;
 
+import com.iouter.slowlylife.common.Resiger;
+import com.iouter.slowlylife.common.ResigerRecipe;
+import com.iouter.slowlylife.gui.SLGuiHander;
 import cpw.mods.fml.common.event.*;
+import cpw.mods.fml.common.network.NetworkRegistry;
 
 public class CommonProxy {
 
@@ -8,15 +12,19 @@ public class CommonProxy {
     // etc, and register them with the GameRegistry."
     public void preInit(FMLPreInitializationEvent event) {
         Config.syncronizeConfiguration(event.getSuggestedConfigurationFile());
-
         SlowlyLife.info("Time to" + Tags.MODNAME);
+        new Resiger().run();
     }
 
     // load "Do your mod setup. Build whatever data structures you care about. Register recipes."
-    public void init(FMLInitializationEvent event) {}
+    public void init(FMLInitializationEvent event) {
+        NetworkRegistry.INSTANCE.registerGuiHandler(SlowlyLife.instance, new SLGuiHander());
+        new ResigerRecipe().run();
+    }
 
     // postInit "Handle interaction with other mods, complete your setup based on this."
-    public void postInit(FMLPostInitializationEvent event) {}
+    public void postInit(FMLPostInitializationEvent event) {
+    }
 
     public void serverAboutToStart(FMLServerAboutToStartEvent event) {}
 

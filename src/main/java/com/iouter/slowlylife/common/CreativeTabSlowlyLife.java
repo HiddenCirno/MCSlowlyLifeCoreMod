@@ -1,6 +1,5 @@
 package com.iouter.slowlylife.common;
 
-import com.iouter.slowlylife.SlowlyLife;
 import com.iouter.slowlylife.Tags;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
@@ -13,6 +12,6 @@ public class CreativeTabSlowlyLife extends CreativeTabs {
 
     @Override
     public Item getTabIconItem() {
-        return SlowlyLife.t3crystal;
+        return Resiger.t3crystal;
     }
 }
