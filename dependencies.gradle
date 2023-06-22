@@ -2,5 +2,6 @@
 
 dependencies {
     compile("net.industrial-craft:industrialcraft-2:2.2.828-experimental:dev")
-    compile("appeng:appliedenergistics2:rv3-beta-6:dev")
+    //compile("appeng:appliedenergistics2:rv3-beta-6:dev")
+    compile("com.github.GTNewHorizons:Applied-Energistics-2-Unofficial:rv3-beta-228-GTNH:dev")
 }

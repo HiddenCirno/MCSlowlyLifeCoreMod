@@ -5,7 +5,18 @@ item.T3Circuit.name=§a先进电路板
 item.dustEmerald.name=绿宝石粉
 item.HTAlloy.name=泰铂合金锭
 item.PlateHTAlloy.name=泰铂合金板
-
+item.advEngProcess.name=§e高级工程电路板
+item.advLogProcess.name=§e高级逻辑电路板
+item.advCalProcess.name=§e高级运算电路板
+item.advEndProcess.name=§e末影珍珠板
+item.advEngProcessPress.name=§e高级工程压印模板
+item.advLogProcessPress.name=§e高级逻辑压印模板
+item.advCalProcessPress.name=§e高级运算压印模板
+item.advEndProcessPress.name=§e末影压印模板
+item.advEngProcessBoard.name=§e高级工程处理器
+item.advLogProcessBoard.name=§e高级逻辑处理器
+item.advCalProcessBoard.name=§e高级运算处理器
+item.BackbonePlateGold.name=§e超密金板
 itemBattery.tooltip.0=Tier : %d
 itemBattery.tooltip.1=%d / %d
 tile.GGSU.name=§aHFSU
@@ -27,6 +38,7 @@ tile.sl.BlockCraftingStorage1g.tooltip.2=§3容量: 1073741824字节
 tile.sl.BlockCraftingStorage4g.tooltip.0=§8§oint即为极限.
 tile.sl.BlockCraftingStorage4g.tooltip.1= 
 tile.sl.BlockCraftingStorage4g.tooltip.2=§3容量 2147483647字节
+tile.BackboneEnergyCell.name=超密能源元件
 
 itemBlockElectric.tooltip.0=Output: %d EU/t
 itemBlockElectric.tooltip.1=%d/%d EU

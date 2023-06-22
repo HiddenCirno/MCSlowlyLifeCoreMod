@@ -5,6 +5,18 @@ item.T3Circuit.name=§aHigh Tec Circuit
 item.dustEmerald.name=Emerald Dust
 item.HTAlloy.name=High Tec Alloy Ingot
 item.PlateHTAlloy.name=High Tec Alloy Plate
+item.advEngProcess.name=§eAdvanced Printed Engineering Circuit
+item.advLogProcess.name=§eAdvanced Printed Logic Circuit
+item.advCalProcess.name=§eAdvanced Printed Calculation Circuit
+item.advEndProcess.name=§ePrinted Ender Peral
+item.advEngProcessPress.name=§eAdvanced Inscriber Engineering Press
+item.advLogProcessPress.name=§eAdvanced Inscriber Logic Press
+item.advCalProcessPress.name=§eAdvanced Inscriber Calculation Press
+item.advEndProcessPress.name=§eInscriber Ender Press
+item.advEngProcessBoard.name=§eAdvanced Engineering Processor
+item.advLogProcessBoard.name=§eAdvanced Logic Processor
+item.advCalProcessBoard.name=§eAdvanced Calculation Processor
+item.BackbonePlateGold.name=§eSuper Dense Gold Plate
 
 tile.HFSU.name=§aHFSU
 tile.Name.name=Name
@@ -27,6 +39,7 @@ tile.sl.BlockCraftingStorage1g.tooltip.2=§3Stored 1073741824Bytes
 tile.sl.BlockCraftingStorage4g.tooltip.0=§8§oint's the limit.
 tile.sl.BlockCraftingStorage4g.tooltip.1= 
 tile.sl.BlockCraftingStorage4g.tooltip.2=§3Stored 2147483647Bytes
+tile.BackboneEnergyCell.name=Backbone Energy Cell
 
 itemBattery.tooltip.0=Tier : %d
 itemBattery.tooltip.1=%d / %d

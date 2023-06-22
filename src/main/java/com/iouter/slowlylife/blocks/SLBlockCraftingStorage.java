@@ -9,6 +9,8 @@
     import net.minecraft.entity.player.EntityPlayer;
     import net.minecraft.item.ItemStack;
     import net.minecraft.util.IIcon;
+    import java.util.EnumSet;
+    import appeng.core.features.AEFeature;
     import net.minecraft.creativetab.CreativeTabs;
     import com.iouter.slowlylife.tileentity.SLTileEntityCraftingStorage;
     import net.minecraft.item.Item;
@@ -24,6 +26,7 @@
             this.setTileEntity(SLTileEntityCraftingStorage.class);
             this.setCreativeTab(Resiger.creativeTabSlowlyLife);
             this.hasSubtypes = true;
+            this.setFeature( EnumSet.of( AEFeature.CraftingCPU ) );
             this.setBlockName(name);
         }
 
