@@ -35,6 +35,40 @@ public class ResigerRecipe implements Runnable{
             InscriberProcessType.Press
         ) );
         */
+        GameRegistry.addShapelessRecipe(
+            new ItemStack(Resiger.BCS65536k, 1, 0),
+            new ItemStack((Item)Item.itemRegistry.getObject("appliedenergistics2:tile.BlockAdvancedCraftingStorage"), 1, 3),
+            new ItemStack((Item)Item.itemRegistry.getObject("appliedenergistics2:tile.BlockAdvancedCraftingStorage"), 1, 3),
+            new ItemStack((Item)Item.itemRegistry.getObject("appliedenergistics2:tile.BlockAdvancedCraftingStorage"), 1, 3),
+            new ItemStack((Item)Item.itemRegistry.getObject("appliedenergistics2:tile.BlockAdvancedCraftingStorage"), 1, 3)
+        );
+        GameRegistry.addShapelessRecipe(
+            new ItemStack(Resiger.BCS65536k, 1, 1),
+            new ItemStack(Resiger.BCS65536k, 1, 0),
+            new ItemStack(Resiger.BCS65536k, 1, 0),
+            new ItemStack(Resiger.BCS65536k, 1, 0),
+            new ItemStack(Resiger.BCS65536k, 1, 0)
+        );
+        GameRegistry.addShapelessRecipe(
+            new ItemStack(Resiger.BCS65536k, 1, 2),
+            new ItemStack(Resiger.BCS65536k, 1, 1),
+            new ItemStack(Resiger.BCS65536k, 1, 1),
+            new ItemStack(Resiger.BCS65536k, 1, 1),
+            new ItemStack(Resiger.BCS65536k, 1, 1)
+        );
+        GameRegistry.addShapelessRecipe(
+            new ItemStack(Resiger.BCS65536k, 1, 3),
+            new ItemStack(Resiger.BCS65536k, 1, 2),
+            new ItemStack(Resiger.BCS65536k, 1, 2)
+        );
+        GameRegistry.addShapelessRecipe(
+            new ItemStack(Resiger.QuantumStorage63),
+            new ItemStack((Item)Item.itemRegistry.getObject("appliedenergistics2:item.ItemExtremeStorageCell.Quantum"))
+        );
+        GameRegistry.addShapelessRecipe(
+            new ItemStack(Resiger.SingularityStorage63),
+            new ItemStack((Item)Item.itemRegistry.getObject("appliedenergistics2:item.ItemExtremeStorageCell.Singularity"))
+        );
         GameRegistry.addShapedRecipe(
             new ItemStack(Resiger.advEngProcessPress),
             "aaa",

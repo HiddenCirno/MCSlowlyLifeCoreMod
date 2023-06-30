@@ -17,6 +17,8 @@ item.advEngProcessBoard.name=§eAdvanced Engineering Processor
 item.advLogProcessBoard.name=§eAdvanced Logic Processor
 item.advCalProcessBoard.name=§eAdvanced Calculation Processor
 item.BackbonePlateGold.name=§eSuper Dense Gold Plate
+item.QuantumStorage63.name=§4ME Quantum Storage Cell·True
+item.SingularityStorage63.name=§4ME Digital Singularity Cell·True
 
 tile.HFSU.name=§aHFSU
 tile.Name.name=Name

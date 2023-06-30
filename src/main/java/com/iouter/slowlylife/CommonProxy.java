@@ -3,11 +3,21 @@ package com.iouter.slowlylife;
 import com.iouter.slowlylife.common.Resiger;
 import com.iouter.slowlylife.common.ResigerRecipe;
 import com.iouter.slowlylife.gui.SLGuiHander;
+import com.iouter.slowlylife.common.Resiger;
+import com.iouter.slowlylife.items.SlItemWandCaps;
 import cpw.mods.fml.common.event.*;
 import cpw.mods.fml.common.network.NetworkRegistry;
+import thaumcraft.api.wands.WandCap;
+import net.minecraft.init.Blocks;
+import net.minecraft.item.Item;
+import net.minecraft.item.Item.ToolMaterial;
+import net.minecraft.item.ItemStack;
+import net.minecraft.util.ResourceLocation;
 
 public class CommonProxy {
 
+    public static WandCap TestTrueCaps;
+    public static WandCap TestTrueCaps1;
     // preInit "Run before anything else. Read your config, create blocks, items,
     // etc, and register them with the GameRegistry."
     public void preInit(FMLPreInitializationEvent event) {

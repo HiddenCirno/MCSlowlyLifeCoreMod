@@ -15,7 +15,7 @@ import org.apache.logging.log4j.Logger;
         version = Tags.VERSION,
         name = Tags.MODNAME,
         acceptedMinecraftVersions = "[1.7.10]",
-        dependencies = "required-after:IC2;required-after:appliedenergistics2")
+        dependencies = "required-after:IC2;required-after:appliedenergistics2;required-after:thaumcraft")
 public class SlowlyLife {
     @Mod.Instance(Tags.MODID)
     public static SlowlyLife instance;

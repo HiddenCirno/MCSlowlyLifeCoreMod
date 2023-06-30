@@ -26,7 +26,7 @@
             this.setTileEntity(SLTileEntityCraftingStorage.class);
             this.setCreativeTab(Resiger.creativeTabSlowlyLife);
             this.hasSubtypes = true;
-            this.setFeature( EnumSet.of( AEFeature.CraftingCPU ) );
+            this.setFeature( EnumSet.of( AEFeature.XtremeCraftingCPU ) );
             this.setBlockName(name);
         }
 

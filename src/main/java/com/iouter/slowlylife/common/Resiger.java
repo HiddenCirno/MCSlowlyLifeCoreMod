@@ -5,10 +5,16 @@ import appeng.block.AEBaseItemBlockChargeable;
 import appeng.block.AEBaseTileBlock;
 import appeng.block.networking.BlockDenseEnergyCell;
 import appeng.tile.powersink.AEBasePoweredTile;
+import com.iouter.slowlylife.SLResearchItem;
 import com.iouter.slowlylife.blocks.*;
 import com.iouter.slowlylife.blocks.baseblock.*;
 import com.iouter.slowlylife.items.SLItemBattery;
 import com.iouter.slowlylife.items.SLItemCommon;
+import com.iouter.slowlylife.items.SlItemStorageCell;
+import com.iouter.slowlylife.items.SlItemWandCaps;
+import com.iouter.slowlylife.items.SLItemBaseCaps;
+import net.minecraft.item.ItemStack;
+import net.minecraft.util.ResourceLocation;
 import com.iouter.slowlylife.tileentity.SLTileEntityChargepadHFSU;
 import com.iouter.slowlylife.tileentity.SLTileEntityCraftingStorage;
 import com.iouter.slowlylife.tileentity.SLTileEntityHFSU;
@@ -18,6 +24,15 @@ import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import appeng.block.crafting.ItemCraftingStorage;
 import net.minecraft.item.Item;
+import scala.tools.nsc.backend.icode.Primitives;
+import thaumcraft.api.wands.WandCap;
+import thaumcraft.api.ThaumcraftApi;
+import thaumcraft.api.aspects.Aspect;
+import thaumcraft.api.aspects.AspectList;
+import thaumcraft.api.crafting.IArcaneRecipe;
+import thaumcraft.api.crafting.InfusionRecipe;
+import thaumcraft.api.research.ResearchPage;
+import thaumcraft.common.config.ConfigItems;
 
 public class Resiger implements Runnable{
     public static CreativeTabSlowlyLife creativeTabSlowlyLife;
@@ -41,8 +56,12 @@ public class Resiger implements Runnable{
     public static Item advCalProcessBoard;
     public static Item BackboneGoldPlate;
     public static Item PlateHTAlloy;
+    public static Item QuantumStorage63;
+    public static Item SingularityStorage63;
+    public static Item InfinityStorageCell;
     public static Block BCS65536k;
     public static Block BackboneEnergyCell;
+    public static Item TestCaps;
     //public static ITileDefinition bcs65536k;
     @Override
     public void run() {
@@ -71,8 +90,14 @@ public class Resiger implements Runnable{
         advEngProcessBoard = new SLItemCommon("advEngProcessBoard");
         advLogProcessBoard = new SLItemCommon("advLogProcessBoard");
         advCalProcessBoard = new SLItemCommon("advCalProcessBoard");
-
+        //
         BackboneGoldPlate = new SLItemCommon("BackbonePlateGold");
+        //
+        //TestCaps = new SLItemBaseCaps().setUnlocalizedName("WandCaps");
+        //
+        QuantumStorage63 = new SlItemStorageCell("QuantumStorage63", Integer.MAX_VALUE/16, 63, 8, 1000D);
+        SingularityStorage63 = new SlItemStorageCell("SingularityStorage63", Long.MAX_VALUE/16, 63, 4096, 1500D);
+        InfinityStorageCell = new SlItemStorageCell("InfinityStorageCell", Long.MAX_VALUE/8, 64, 4096, 1500D);
         resiger();
     }
 
@@ -101,6 +126,10 @@ public class Resiger implements Runnable{
         GameRegistry.registerItem(advCalProcessBoard, "advCalProcessBoard");
         GameRegistry.registerItem(BackboneGoldPlate, "BackbonePlateGold");
         GameRegistry.registerItem(PlateHTAlloy, "PlateHTAlloy");
+        GameRegistry.registerItem(QuantumStorage63, "QuantumStorage63");
+        GameRegistry.registerItem(SingularityStorage63, "SingularityStorage63");
+        GameRegistry.registerItem(InfinityStorageCell, "InfinityStorageCell");
+        //GameRegistry.registerItem(TestCaps, "WandCaps");
         GameRegistry.registerBlock(BCS65536k, SLItemBlockCraftingStorage.class, "CraftingStorage65536k");
         GameRegistry.registerBlock(BackboneEnergyCell, SLBaseItemBlockChargeable.class, "BackboneEnergyCell");
     }
